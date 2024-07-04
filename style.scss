@@ -1,0 +1,123 @@
+:host {
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 10px rgba(249, 92, 24, 0.3), 0 0 0 0 rgba(249, 92, 24, 0.2), 0 0 0 0 rgba(249, 92, 24, 0.2)
+  }
+  40% {
+    box-shadow: 0 8px 10px rgba(249, 92, 24, 0.3), 0 0 0 15px rgba(249, 92, 24, 0.2), 0 0 0 0 rgba(249, 92, 24, 0.2)
+  }
+  80% {
+    box-shadow: 0 8px 10px rgba(249, 92, 24, 0.3), 0 0 0 30px rgba(249, 92, 24, 0), 0 0 0 27px rgba(249, 92, 24, 0.067)
+  }
+  100% {
+    box-shadow: 0 8px 10px rgba(249, 92, 24, 0.3), 0 0 0 30px rgba(249, 92, 24, 0), 0 0 0 40px rgba(249, 92, 24, 0.0)
+  }
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.iec {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+  font-size: 13px;
+  line-height: 1.2;
+  height: 60px;
+
+  transition: all 250ms ease-out;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+
+  &--hidden {
+    opacity: 0;
+    transform: translateX(15px) translateY(15px);
+  }
+}
+
+.iec__link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  text-decoration: none;
+}
+
+.iec__icon {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f09433;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+
+  box-shadow: 2px 2px 3px #999;
+  animation: pulse linear 1.5s infinite;
+}
+
+.iec__cta {
+  background-color: #444857;
+  padding: 10px 40px 10px 15px;
+  color: #fff;
+  border-radius: 20px 0 0 20px;
+  margin-right: -30px;
+  display: flex;
+
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.iec svg {
+  width: 35px;
+  height: 35px;
+}
+
+.iec__close-button {
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  background: none;
+  z-index: 1222;
+  border: none;
+  opacity: 0.5;
+
+  cursor: pointer;
+  border-radius: 50%;
+
+  transition-property: all;
+  transition-duration: 0.25s;
+
+  &:after {
+    display: inline-block;
+    content: "\00d7";
+    /* This will render the 'X' */
+    font-size: 20px;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: #444857;
+    opacity: 1;
+    color: white;
+    transform: rotate(45deg);
+  }
+}
+
