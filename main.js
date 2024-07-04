@@ -1,5 +1,5 @@
 import { styles } from './assets.js';
-import './style.scss';
+// import './style.scss';
 
 class SocialEasyWidget extends HTMLElement {
   #scriptData = document.getElementById('social-easy-widget').dataset.sew;
@@ -91,28 +91,4 @@ customElements.define('social-easy-widget', SocialEasyWidget);
 // Использование элемента с передачей свойства
 const widget = document.createElement('social-easy-widget');
 document.body.appendChild(widget);
-
-///
-
-// const iecTime = 0;
-// const closeButton = document.querySelector('.iec__close-button');
-// const widgetContainer = document.querySelector('.iec');
-//
-// const iecRemoveBlock = () => {
-//   widgetContainer.remove();
-// };
-// document.addEventListener('DOMContentLoaded', () => {
-//   setTimeout(() => {
-//     closeButton.addEventListener('click', () => {
-//       widgetContainer.classList.add('iec--hidden');
-//       setTimeout(() => {
-//         iecRemoveBlock();
-//       }, 500);
-//     });
-//
-//     if (widgetContainer) {
-//       widgetContainer.classList.remove('iec--hidden');
-//     }
-//   }, iecTime * 1000);
-// });
 
