@@ -1,8 +1,8 @@
 import { styles } from './assets.js';
 // import './style.scss';
 
-class SocialEasyWidget extends HTMLElement {
-  #scriptData = document.getElementById('social-easy-widget').dataset.sew;
+class NetEasyWidget extends HTMLElement {
+  #scriptData = document.getElementById('net-easy-widget').dataset.new;
   #scriptObject = JSON.parse(this.#scriptData.replace(/'/g, '"'));
   #delay = this.#scriptObject['delay'];
   #closeButton = null;
@@ -86,9 +86,8 @@ class SocialEasyWidget extends HTMLElement {
 }
 
 // Регистрация пользовательского элемента
-customElements.define('social-easy-widget', SocialEasyWidget);
+customElements.define('net-easy-widget', NetEasyWidget);
 
 // Использование элемента с передачей свойства
-const widget = document.createElement('social-easy-widget');
+const widget = document.createElement('net-easy-widget');
 document.body.appendChild(widget);
-

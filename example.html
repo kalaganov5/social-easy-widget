@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let isLoadedNEW = false;
+
+    const loadScriptNEW = function () {
+      const scriptNEW = document.createElement('script');
+      scriptNEW.id = 'net-easy-widget';
+      scriptNEW.type = 'module';
+      scriptNEW.dataset.new = JSON.stringify({
+        'social': 'instagram',
+        'user': 'instagram',
+        'background-color': '#444857',
+        'text-cta': 'Нужна помощь?',
+        'text-offer': 'Пишите в Instagram',
+        'delay': '0'
+      });
+      scriptNEW.src = 'URL';
+      document.body.appendChild(scriptNEW);
+
+      // Remove the event listeners to avoid loading the script multiple times
+      window.removeEventListener('scroll', loadScriptNEW);
+      window.removeEventListener('click', loadScriptNEW);
+      clearTimeout(timerNEW);
+      isLoadedNEW = true;
+    };
+
+    window.addEventListener('scroll', loadScriptNEW);
+    window.addEventListener('click', loadScriptNEW);
+    const timerNEW = setTimeout(loadScriptNEW, 1000);
+  });
+</script>
+</body>
+</html>
