@@ -61,7 +61,6 @@ class NetEasyWidget extends HTMLElement {
     const brandColor = this.#getSocialData()[social]['brandColor'];
 
     this.widgetContainer.innerHTML = `
-
         <div class="iec ${hiddenClassIsDelay}">
         <style> @import "style.scss"; </style>
          <div style="display: none">
@@ -105,29 +104,37 @@ class NetEasyWidget extends HTMLElement {
                 <symbol fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" id="x">
                   <defs>
                     <clipPath id="clip10_2">
-                      <rect id="logo" width="50.000000" height="50.000000" fill="white" fill-opacity="0"></rect>
+                      <rect id="logo" width="50.000000" height="50.000000" fill-opacity="0"></rect>
                     </clipPath>
                   </defs>
                   <g clip-path="url(#clip10_2)">
                     <path id="path" d="M29.75 21.16L48.37 0L43.95 0L27.79 18.37L14.88 0L0 0L19.52 27.78L0 49.97L4.41 49.97L21.47 30.57L35.11 49.97L50 49.97L29.75 21.16ZM23.71 28.02L21.73 25.26L6 3.24L12.77 3.24L25.47 21.01L27.45 23.78L43.96 46.87L37.18 46.87L23.71 28.02Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"></path>
                   </g>
                 </symbol>
+                <symbol fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 75.7673 76.248" id="linkedin">
+                  <path id="path14" d="M0 5.46C0 2.44 2.5 0 5.59 0L70.16 0C73.26 0 75.76 2.44 75.76 5.46L75.76 70.78C75.76 73.8 73.26 76.24 70.16 76.24L5.59 76.24C2.5 76.24 0 73.8 0 70.78L0 5.46Z" fill="#006699" fill-opacity="0" fill-rule="nonzero"></path>
+                  <path id="path14" d="M5.59 0L70.16 0C73.26 0 75.76 2.44 75.76 5.46L75.76 70.78C75.76 73.8 73.26 76.24 70.16 76.24L5.59 76.24C2.5 76.24 0 73.8 0 70.78L0 5.46C0 2.44 2.5 0 5.59 0Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
+                  <path id="path28" d="M22.96 63.82L22.96 29.39L11.52 29.39L11.52 63.82L22.96 63.82ZM17.24 24.69C21.23 24.69 23.72 22.05 23.72 18.74C23.64 15.36 21.23 12.79 17.32 12.79C13.4 12.79 10.84 15.36 10.84 18.74C10.84 22.05 13.4 24.69 17.24 24.69Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                  <path id="path28" d="M22.96 29.39L11.52 29.39L11.52 63.82L22.96 63.82L22.96 29.39ZM23.72 18.74C23.64 15.36 21.23 12.79 17.32 12.79C13.4 12.79 10.84 15.36 10.84 18.74C10.84 22.05 13.4 24.69 17.24 24.69C21.23 24.69 23.72 22.05 23.72 18.74Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
+                  <path id="path30" d="M29.29 63.82L40.74 63.82L40.74 44.6C40.74 43.57 40.81 42.54 41.12 41.8C41.94 39.75 43.83 37.62 46.99 37.62C51.13 37.62 52.78 40.77 52.78 45.4L52.78 63.82L64.23 63.82L64.23 44.08C64.23 33.51 58.58 28.58 51.05 28.58C44.88 28.58 42.17 32.04 40.66 34.39L40.74 29.39L29.3 29.39C29.45 32.62 29.29 63.82 29.29 63.82Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                  <path id="path30" d="M40.74 63.82L40.74 44.6C40.74 43.57 40.81 42.54 41.12 41.8C41.94 39.75 43.83 37.62 46.99 37.62C51.13 37.62 52.78 40.77 52.78 45.4L52.78 63.82L64.23 63.82L64.23 44.08C64.23 33.51 58.58 28.58 51.05 28.58C44.88 28.58 42.17 32.04 40.66 34.39L40.74 29.39L29.3 29.39C29.45 32.62 29.29 63.82 29.29 63.82L40.74 63.82Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
+                </symbol>
             </svg>
          </div>
          <style>
             @keyframes pulse-custom {
-            0% {
-            box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 0 rgba(${brandColor}, 0.2), 0 0 0 0 rgba(${brandColor}, 0.2)
-            }
-            40% {
-            box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 15px rgba(${brandColor}, 0.2), 0 0 0 0 rgba(${brandColor}, 0.2)
-            }
-            80% {
-            box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 30px rgba(${brandColor}, 0), 0 0 0 27px rgba(${brandColor}, 0.067)
-            }
-            100% {
-            box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 30px rgba(${brandColor}, 0), 0 0 0 40px rgba(${brandColor}, 0.0)
-            }
+              0% {
+                  box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 0 rgba(${brandColor}, 0.2), 0 0 0 0 rgba(${brandColor}, 0.2)
+              }
+              40% {
+                  box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 15px rgba(${brandColor}, 0.2), 0 0 0 0 rgba(${brandColor}, 0.2)
+              }
+              80% {
+                  box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 30px rgba(${brandColor}, 0), 0 0 0 27px rgba(${brandColor}, 0.067)
+              }
+              100% {
+                  box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 30px rgba(${brandColor}, 0), 0 0 0 40px rgba(${brandColor}, 0.0)
+              }
             }
          </style>
          <a href="${link}" class="iec__link" target="_blank">
@@ -209,6 +216,13 @@ class NetEasyWidget extends HTMLElement {
         'socialName': 'X',
         'icon': '#x',
         'brandColor': '0, 0, 0',
+      },
+      'linkedin': {
+        'link': 'https://t.me/',
+        'backgroundIconColor': 'rgb(10, 102, 194)',
+        'socialName': 'LinkedIn',
+        'icon': '#linkedin',
+        'brandColor': '10, 102, 194',
       },
     };
   }
