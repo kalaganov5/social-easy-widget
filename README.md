@@ -1,3 +1,4 @@
+```
 const ewcConfig = {
   'id': '34_314159265358980', // маска: userId_subscriptionId
   'social': 'whatsapp', // instagram, facebook, whatsapp, vk, messenger, telegram, x, linkedin
@@ -9,3 +10,4 @@ const ewcConfig = {
   'background-color': '#444857', // фоновый цвет для подложки
   'isAnimationDisabled': false, // задержка показа виджета true - выключить || false по умолчанию
 }
+```
