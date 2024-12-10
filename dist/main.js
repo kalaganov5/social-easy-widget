@@ -1,8 +1,7 @@
-var _=Object.defineProperty;var b=i=>{throw TypeError(i)};var M=(i,e,t)=>e in i?_(i,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):i[e]=t;var m=(i,e,t)=>M(i,typeof e!="symbol"?e+"":e,t),w=(i,e,t)=>e.has(i)||b("Cannot "+t);var n=(i,e,t)=>(w(i,e,"read from private field"),t?t.call(i):e.get(i)),d=(i,e,t)=>e.has(i)?b("Cannot add the same private member more than once"):e instanceof WeakSet?e.add(i):e.set(i,t),u=(i,e,t,s)=>(w(i,e,"write to private field"),s?s.call(i,t):e.set(i,t),t),p=(i,e,t)=>(w(i,e,"access private method"),t);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const l of o)if(l.type==="childList")for(const h of l.addedNodes)h.tagName==="LINK"&&h.rel==="modulepreload"&&s(h)}).observe(document,{childList:!0,subtree:!0});function t(o){const l={};return o.integrity&&(l.integrity=o.integrity),o.referrerPolicy&&(l.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?l.credentials="include":o.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function s(o){if(o.ep)return;o.ep=!0;const l=t(o);fetch(o.href,l)}})();const $=`
+var Z=Object.defineProperty;var b=i=>{throw TypeError(i)};var $=(i,e,t)=>e in i?Z(i,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):i[e]=t;var m=(i,e,t)=>$(i,typeof e!="symbol"?e+"":e,t),L=(i,e,t)=>e.has(i)||b("Cannot "+t);var n=(i,e,t)=>(L(i,e,"read from private field"),t?t.call(i):e.get(i)),p=(i,e,t)=>e.has(i)?b("Cannot add the same private member more than once"):e instanceof WeakSet?e.add(i):e.set(i,t),u=(i,e,t,d)=>(L(i,e,"write to private field"),d?d.call(i,t):e.set(i,t),t),c=(i,e,t)=>(L(i,e,"access private method"),t);(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))d(o);new MutationObserver(o=>{for(const a of o)if(a.type==="childList")for(const h of a.addedNodes)h.tagName==="LINK"&&h.rel==="modulepreload"&&d(h)}).observe(document,{childList:!0,subtree:!0});function t(o){const a={};return o.integrity&&(a.integrity=o.integrity),o.referrerPolicy&&(a.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?a.credentials="include":o.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function d(o){if(o.ep)return;o.ep=!0;const a=t(o);fetch(o.href,a)}})();const z=`
 @charset "UTF-8";:host{font-family:Roboto,sans-serif}@keyframes pulse{0%{box-shadow:0 8px 10px #f95c184d,0 0 #f95c1833,0 0 #f95c1833}40%{box-shadow:0 8px 10px #f95c184d,0 0 0 15px #f95c1833,0 0 #f95c1833}80%{box-shadow:0 8px 10px #f95c184d,0 0 0 30px #f95c1800,0 0 0 27px #f95c1811}to{box-shadow:0 8px 10px #f95c184d,0 0 0 30px #f95c1800,0 0 0 40px #f95c1800}}.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;border:0;padding:0;white-space:nowrap;clip-path:inset(100%);clip:rect(0 0 0 0);overflow:hidden}.iec{position:fixed;bottom:25px;right:25px;z-index:100;font-size:13px;line-height:1.2;height:60px;transition:all .25s ease-out;opacity:1;transform:translate(0) translateY(0)}.iec--hidden{opacity:0;transform:translate(15px) translateY(15px)}.iec__link{display:grid;grid-template-columns:1fr auto;text-decoration:none}.iec__icon{z-index:1;width:60px;height:60px;border-radius:50%;display:flex;justify-content:center;align-items:center;background:#f09433;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f09433",endColorstr="#bc1888",GradientType=1);box-shadow:2px 2px 3px #999;animation:pulse linear 1.5s infinite}.iec__cta{background-color:#444857;padding:10px 40px 10px 15px;color:#fff;border-radius:20px 0 0 20px;margin-right:-30px;display:flex;height:60px;max-height:60px;box-sizing:border-box;position:relative;flex-direction:column;justify-content:center}.iec__cta-text{display:flex;flex-direction:column;justify-content:center;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;max-width:25ch}.iec svg{width:35px;height:35px}.iec__close-button{position:absolute;right:-10px;top:-20px;background:none;z-index:1222;border:none;opacity:.5;cursor:pointer;border-radius:50%;transition-property:all;transition-duration:.25s}.iec__close-button:after{display:inline-block;content:"×";font-size:20px}.iec__close-button:focus,.iec__close-button:hover{background-color:#444857;opacity:1;color:#fff;transform:rotate(45deg)}
-`;var x,r,g,f,c,C;class z extends HTMLElement{constructor(){super();d(this,c);d(this,x,document.getElementById("net-easy-widget").dataset.new);d(this,r,JSON.parse(n(this,x).replace(/'/g,'"')));d(this,g,n(this,r).delay);d(this,f,null);m(this,"widgetContainer",null);this.attachShadow({mode:"open"}),this.initialize(),this.injectStyles(),setTimeout(()=>{u(this,f,this.widgetContainer.querySelector(".iec__close-button")),n(this,f).addEventListener("click",()=>{this.widgetContainer.querySelector(".iec").classList.add("iec--hidden"),setTimeout(()=>{this.widgetContainer.remove()},500)}),this.widgetContainer&&this.widgetContainer.querySelector(".iec").classList.remove("iec--hidden")},n(this,g)*1e3)}initialize(){this.widgetContainer=document.createElement("div"),this.createWidgetContent(),this.shadowRoot.appendChild(this.widgetContainer)}createWidgetContent(){const t=n(this,r).social,s=n(this,r).user;if(!t||!s){console.error("Проверьте настройки виджета");return}const o=!!n(this,r).isAnimationDisabled,l=n(this,r)["background-color"]?n(this,r)["background-color"]:"#444857",h=n(this,r)["text-cta"]?n(this,r)["text-cta"]:"Нужна помощь?",L=n(this,r)["text-offer"]?n(this,r)["text-offer"]:"Пишите в "+p(this,c,C).call(this)[t].socialName,y=n(this,g)>0?"iec--hidden":"",k=p(this,c,C).call(this)[t].link+s,v=p(this,c,C).call(this)[t].icon,F=p(this,c,C).call(this)[t].backgroundIconColor,a=p(this,c,C).call(this)[t].brandColor;this.widgetContainer.innerHTML=`
-
-        <div class="iec ${y}">
+`;var x,r,f,w,l,C,g,y;class I extends HTMLElement{constructor(){super();p(this,l);p(this,x,document.getElementById("net-easy-widget").dataset.new);p(this,r,JSON.parse(n(this,x).replace(/'/g,'"')));p(this,f,n(this,r).delay);p(this,w,null);m(this,"widgetContainer",null);this.attachShadow({mode:"open"}),this.initialize(),this.injectStyles(),setTimeout(()=>{u(this,w,this.widgetContainer.querySelector(".iec__close-button")),n(this,w).addEventListener("click",()=>{this.widgetContainer.querySelector(".iec").classList.add("iec--hidden"),setTimeout(()=>{this.widgetContainer.remove()},500)}),this.widgetContainer&&this.widgetContainer.querySelector(".iec").classList.remove("iec--hidden")},n(this,f)*1e3),c(this,l,y).call(this)}initialize(){this.widgetContainer=document.createElement("div"),this.createWidgetContent(),this.shadowRoot.appendChild(this.widgetContainer),c(this,l,g).call(this,"iec_show")}createWidgetContent(){const t=n(this,r).social,d=n(this,r).user;if(c(this,l,g).call(this,`iec_init_${t}`),!t||!d){console.error("Check the widget settings"),c(this,l,g).call(this,"iec_error_setting");return}const o=!!n(this,r).isAnimationDisabled,a=n(this,r)["background-color"]?n(this,r)["background-color"]:"#444857",h=n(this,r)["text-cta"]?n(this,r)["text-cta"]:"Нужна помощь?",k=n(this,r)["text-offer"]?n(this,r)["text-offer"]:"Пишите в "+c(this,l,C).call(this)[t].socialName,F=n(this,f)>0?"iec--hidden":"",v=c(this,l,C).call(this)[t].link+d,_=c(this,l,C).call(this)[t].icon,M=c(this,l,C).call(this)[t].backgroundIconColor,s=c(this,l,C).call(this)[t].brandColor;this.widgetContainer.innerHTML=`
+        <div class="iec ${F}">
         <style> @import "style.scss"; </style>
          <div style="display: none">
             <svg width="0" height="0">
@@ -45,47 +44,58 @@ var _=Object.defineProperty;var b=i=>{throw TypeError(i)};var M=(i,e,t)=>e in i?
                 <symbol fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" id="x">
                   <defs>
                     <clipPath id="clip10_2">
-                      <rect id="logo" width="50.000000" height="50.000000" fill="white" fill-opacity="0"></rect>
+                      <rect id="logo" width="50.000000" height="50.000000" fill-opacity="0"></rect>
                     </clipPath>
                   </defs>
                   <g clip-path="url(#clip10_2)">
                     <path id="path" d="M29.75 21.16L48.37 0L43.95 0L27.79 18.37L14.88 0L0 0L19.52 27.78L0 49.97L4.41 49.97L21.47 30.57L35.11 49.97L50 49.97L29.75 21.16ZM23.71 28.02L21.73 25.26L6 3.24L12.77 3.24L25.47 21.01L27.45 23.78L43.96 46.87L37.18 46.87L23.71 28.02Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="nonzero"></path>
                   </g>
                 </symbol>
+                <symbol fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 75.7673 76.248" id="linkedin">
+                  <path id="path14" d="M0 5.46C0 2.44 2.5 0 5.59 0L70.16 0C73.26 0 75.76 2.44 75.76 5.46L75.76 70.78C75.76 73.8 73.26 76.24 70.16 76.24L5.59 76.24C2.5 76.24 0 73.8 0 70.78L0 5.46Z" fill="#006699" fill-opacity="0" fill-rule="nonzero"></path>
+                  <path id="path14" d="M5.59 0L70.16 0C73.26 0 75.76 2.44 75.76 5.46L75.76 70.78C75.76 73.8 73.26 76.24 70.16 76.24L5.59 76.24C2.5 76.24 0 73.8 0 70.78L0 5.46C0 2.44 2.5 0 5.59 0Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
+                  <path id="path28" d="M22.96 63.82L22.96 29.39L11.52 29.39L11.52 63.82L22.96 63.82ZM17.24 24.69C21.23 24.69 23.72 22.05 23.72 18.74C23.64 15.36 21.23 12.79 17.32 12.79C13.4 12.79 10.84 15.36 10.84 18.74C10.84 22.05 13.4 24.69 17.24 24.69Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                  <path id="path28" d="M22.96 29.39L11.52 29.39L11.52 63.82L22.96 63.82L22.96 29.39ZM23.72 18.74C23.64 15.36 21.23 12.79 17.32 12.79C13.4 12.79 10.84 15.36 10.84 18.74C10.84 22.05 13.4 24.69 17.24 24.69C21.23 24.69 23.72 22.05 23.72 18.74Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
+                  <path id="path30" d="M29.29 63.82L40.74 63.82L40.74 44.6C40.74 43.57 40.81 42.54 41.12 41.8C41.94 39.75 43.83 37.62 46.99 37.62C51.13 37.62 52.78 40.77 52.78 45.4L52.78 63.82L64.23 63.82L64.23 44.08C64.23 33.51 58.58 28.58 51.05 28.58C44.88 28.58 42.17 32.04 40.66 34.39L40.74 29.39L29.3 29.39C29.45 32.62 29.29 63.82 29.29 63.82Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"></path>
+                  <path id="path30" d="M40.74 63.82L40.74 44.6C40.74 43.57 40.81 42.54 41.12 41.8C41.94 39.75 43.83 37.62 46.99 37.62C51.13 37.62 52.78 40.77 52.78 45.4L52.78 63.82L64.23 63.82L64.23 44.08C64.23 33.51 58.58 28.58 51.05 28.58C44.88 28.58 42.17 32.04 40.66 34.39L40.74 29.39L29.3 29.39C29.45 32.62 29.29 63.82 29.29 63.82L40.74 63.82Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
+                </symbol>
+                <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" id="phone">
+                  <path d="m139.33 242.33 216.8 215.33c23.23-26.9 170.33-184.6 243.87 30.8 0 0-7.74 111.54-166.47 111.54-112.24 0-228.37-134.6-309.67-211.54C54.2 323.06 0 238.46 0 161.53 0 3.86 108.4 0 108.4 0c247.73 84.6 30.93 242.33 30.93 242.33Z" fill="#FFF"></path>
+                </symbol>
             </svg>
          </div>
          <style>
             @keyframes pulse-custom {
-            0% {
-            box-shadow: 0 8px 10px rgba(${a}, 0.3), 0 0 0 0 rgba(${a}, 0.2), 0 0 0 0 rgba(${a}, 0.2)
-            }
-            40% {
-            box-shadow: 0 8px 10px rgba(${a}, 0.3), 0 0 0 15px rgba(${a}, 0.2), 0 0 0 0 rgba(${a}, 0.2)
-            }
-            80% {
-            box-shadow: 0 8px 10px rgba(${a}, 0.3), 0 0 0 30px rgba(${a}, 0), 0 0 0 27px rgba(${a}, 0.067)
-            }
-            100% {
-            box-shadow: 0 8px 10px rgba(${a}, 0.3), 0 0 0 30px rgba(${a}, 0), 0 0 0 40px rgba(${a}, 0.0)
-            }
+              0% {
+                  box-shadow: 0 8px 10px rgba(${s}, 0.3), 0 0 0 0 rgba(${s}, 0.2), 0 0 0 0 rgba(${s}, 0.2)
+              }
+              40% {
+                  box-shadow: 0 8px 10px rgba(${s}, 0.3), 0 0 0 15px rgba(${s}, 0.2), 0 0 0 0 rgba(${s}, 0.2)
+              }
+              80% {
+                  box-shadow: 0 8px 10px rgba(${s}, 0.3), 0 0 0 30px rgba(${s}, 0), 0 0 0 27px rgba(${s}, 0.067)
+              }
+              100% {
+                  box-shadow: 0 8px 10px rgba(${s}, 0.3), 0 0 0 30px rgba(${s}, 0), 0 0 0 40px rgba(${s}, 0.0)
+              }
             }
          </style>
-         <a href="${k}" class="iec__link" target="_blank">
-            <div class="iec__cta" style="background-color: ${l}">
+         <a href="${v}" class="iec__link" target="_blank" id="iec-link">
+            <div class="iec__cta" style="background-color: ${a}">
                <div class="iec__cta-text">
                ${h}
-               <span>${L}</span>
+               <span>${k}</span>
               </div>
             </div>
-            <div class="iec__icon" style="background: ${F}; 
+            <div class="iec__icon" style="background: ${M}; 
                ${o?"animation: none;":"animation-name: pulse-custom;"}">
                <svg width="50" height="50">
-                  <use xlink:href="${v}"></use>
+                  <use xlink:href="${_}"></use>
                </svg>
             </div>
          </a>
          <button class="iec__close-button" type="button">
-         <span class="visually-hidden">Закрыть</span>
+         <span class="visually-hidden">Close</span>
          </button>
       </div>
-    `}injectStyles(){const t=document.createElement("style");t.innerHTML=$.replace(/^\s+|\n/gm,""),this.shadowRoot.appendChild(t)}}x=new WeakMap,r=new WeakMap,g=new WeakMap,f=new WeakMap,c=new WeakSet,C=function(){return{instagram:{link:"https://www.instagram.com/",backgroundIconColor:"linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",socialName:"Instagram",icon:"#instagram",brandColor:"188, 24, 136"},facebook:{link:"https://www.facebook.com/",backgroundIconColor:"linear-gradient(0.00deg, rgb(0, 98, 224) 2.994%,rgb(25, 175, 255) 100.02%);",socialName:"Facebook",icon:"#facebook",brandColor:"0, 98, 224"},whatsapp:{link:"https://wa.me/",backgroundIconColor:"linear-gradient(0.00deg, rgb(16, 171, 43) 32.62%,rgb(96, 245, 120) 100.02%);",socialName:"WhatsApp",icon:"#whatsapp",brandColor:"16, 171, 43"},vk:{link:"https://vk.me/",backgroundIconColor:"#0077FF",socialName:"VK",icon:"#vk",brandColor:"0, 119, 255"},messenger:{link:"https://m.me/",backgroundIconColor:"radial-gradient(116.00% 119.00% at 18% 95%,rgb(18, 146, 255),rgb(41, 130, 255) 7.9%,rgb(78, 105, 255) 23%,rgb(101, 89, 255) 35.1%,rgb(109, 83, 255) 42.8%,rgb(223, 71, 170) 75.4%,rgb(255, 98, 87) 94.6%)",socialName:"Messenger",icon:"#messenger",brandColor:"223, 71, 170"},telegram:{link:"https://x.com/",backgroundIconColor:"linear-gradient(0.00deg, rgb(29, 147, 210),rgb(56, 176, 227) 100%)",socialName:"Telegram",icon:"#telegram",brandColor:"29, 147, 210"},x:{link:"https://t.me/",backgroundIconColor:"#000",socialName:"X",icon:"#x",brandColor:"0, 0, 0"}}};customElements.define("net-easy-widget",z);const Z=document.createElement("net-easy-widget");document.body.appendChild(Z);
+    `}injectStyles(){const t=document.createElement("style");t.innerHTML=z.replace(/^\s+|\n/gm,""),this.shadowRoot.appendChild(t)}}x=new WeakMap,r=new WeakMap,f=new WeakMap,w=new WeakMap,l=new WeakSet,C=function(){return{instagram:{link:"https://www.instagram.com/",backgroundIconColor:"linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",socialName:"Instagram",icon:"#instagram",brandColor:"188, 24, 136"},facebook:{link:"https://www.facebook.com/",backgroundIconColor:"linear-gradient(0.00deg, rgb(0, 98, 224) 2.994%,rgb(25, 175, 255) 100.02%);",socialName:"Facebook",icon:"#facebook",brandColor:"0, 98, 224"},whatsapp:{link:"https://wa.me/",backgroundIconColor:"linear-gradient(0.00deg, rgb(16, 171, 43) 32.62%,rgb(96, 245, 120) 100.02%);",socialName:"WhatsApp",icon:"#whatsapp",brandColor:"16, 171, 43"},vk:{link:"https://vk.me/",backgroundIconColor:"#0077FF",socialName:"VK",icon:"#vk",brandColor:"0, 119, 255"},messenger:{link:"https://m.me/",backgroundIconColor:"radial-gradient(116.00% 119.00% at 18% 95%,rgb(18, 146, 255),rgb(41, 130, 255) 7.9%,rgb(78, 105, 255) 23%,rgb(101, 89, 255) 35.1%,rgb(109, 83, 255) 42.8%,rgb(223, 71, 170) 75.4%,rgb(255, 98, 87) 94.6%)",socialName:"Messenger",icon:"#messenger",brandColor:"223, 71, 170"},telegram:{link:"https://t.me/",backgroundIconColor:"linear-gradient(0.00deg, rgb(29, 147, 210),rgb(56, 176, 227) 100%)",socialName:"Telegram",icon:"#telegram",brandColor:"29, 147, 210"},x:{link:"https://x.com/",backgroundIconColor:"#000",socialName:"X",icon:"#x",brandColor:"0, 0, 0"},linkedin:{link:"https://www.linkedin.com/",backgroundIconColor:"rgb(10, 102, 194)",socialName:"LinkedIn",icon:"#linkedin",brandColor:"10, 102, 194"},phone:{link:"tel:",backgroundIconColor:"#0071e3",socialName:"Phone",icon:"#phone",brandColor:"10, 102, 194"}}},g=function(t){console.log(`${t}`),window.dataLayer=window.dataLayer||[],dataLayer.push({event:`${t}`})},y=function(){this.widgetContainer.querySelector("#iec-link").addEventListener("click",()=>{c(this,l,g).call(this,"iec_click")})};customElements.define("net-easy-widget",I);const N=document.createElement("net-easy-widget");document.body.appendChild(N);

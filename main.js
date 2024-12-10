@@ -9,10 +9,9 @@ class NetEasyWidget extends HTMLElement {
   #closeButton = null;
   widgetContainer = null;
 
-  constructor () {
+  constructor() {
     super();
 
-    // {social: 'instagram', user: 'instagram', color: '#444857'}
     this.attachShadow({ mode: 'open' }); // Включаем Shadow DOM
     this.initialize();
     this.injectStyles();
@@ -31,21 +30,27 @@ class NetEasyWidget extends HTMLElement {
         this.widgetContainer.querySelector('.iec').classList.remove('iec--hidden');
       }
     }, this.#delay * 1000);
+
+    this.#trackLinkClick();
   }
 
-  initialize () {
+  initialize() {
     this.widgetContainer = document.createElement('div');
 
     this.createWidgetContent();
     this.shadowRoot.appendChild(this.widgetContainer);
+    this.#sendAnalytics('iec_show');
   }
 
-  createWidgetContent () {
+  createWidgetContent() {
     const social = this.#scriptObject.social;
     const userName = this.#scriptObject.user;
 
+    this.#sendAnalytics(`iec_init_${social}`);
+
     if (!social || !userName) {
-      console.error('Проверьте настройки виджета');
+      console.error('Check the widget settings');
+      this.#sendAnalytics('iec_error_setting');
       return;
     }
 
@@ -119,6 +124,9 @@ class NetEasyWidget extends HTMLElement {
                   <path id="path30" d="M29.29 63.82L40.74 63.82L40.74 44.6C40.74 43.57 40.81 42.54 41.12 41.8C41.94 39.75 43.83 37.62 46.99 37.62C51.13 37.62 52.78 40.77 52.78 45.4L52.78 63.82L64.23 63.82L64.23 44.08C64.23 33.51 58.58 28.58 51.05 28.58C44.88 28.58 42.17 32.04 40.66 34.39L40.74 29.39L29.3 29.39C29.45 32.62 29.29 63.82 29.29 63.82Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"></path>
                   <path id="path30" d="M40.74 63.82L40.74 44.6C40.74 43.57 40.81 42.54 41.12 41.8C41.94 39.75 43.83 37.62 46.99 37.62C51.13 37.62 52.78 40.77 52.78 45.4L52.78 63.82L64.23 63.82L64.23 44.08C64.23 33.51 58.58 28.58 51.05 28.58C44.88 28.58 42.17 32.04 40.66 34.39L40.74 29.39L29.3 29.39C29.45 32.62 29.29 63.82 29.29 63.82L40.74 63.82Z" stroke="#000000" stroke-opacity="0" stroke-width="1.018827"></path>
                 </symbol>
+                <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" id="phone">
+                  <path d="m139.33 242.33 216.8 215.33c23.23-26.9 170.33-184.6 243.87 30.8 0 0-7.74 111.54-166.47 111.54-112.24 0-228.37-134.6-309.67-211.54C54.2 323.06 0 238.46 0 161.53 0 3.86 108.4 0 108.4 0c247.73 84.6 30.93 242.33 30.93 242.33Z" fill="#FFF"></path>
+                </symbol>
             </svg>
          </div>
          <style>
@@ -137,7 +145,7 @@ class NetEasyWidget extends HTMLElement {
               }
             }
          </style>
-         <a href="${link}" class="iec__link" target="_blank">
+         <a href="${link}" class="iec__link" target="_blank" id="iec-link">
             <div class="iec__cta" style="background-color: ${backgroundColor}">
                <div class="iec__cta-text">
                ${textCTA}
@@ -152,19 +160,19 @@ class NetEasyWidget extends HTMLElement {
             </div>
          </a>
          <button class="iec__close-button" type="button">
-         <span class="visually-hidden">Закрыть</span>
+         <span class="visually-hidden">Close</span>
          </button>
       </div>
     `;
   }
 
-  injectStyles () {
+  injectStyles() {
     const styleTag = document.createElement('style');
     styleTag.innerHTML = styles.replace(/^\s+|\n/gm, '');
     this.shadowRoot.appendChild(styleTag);
   }
 
-  #getSocialData () {
+  #getSocialData() {
     // brandColor rgb without (). Example 0, 98, 224
     return {
       'instagram': {
@@ -204,27 +212,50 @@ class NetEasyWidget extends HTMLElement {
         'brandColor': '223, 71, 170',
       },
       'telegram': {
-        'link': 'https://x.com/',
+        'link': 'https://t.me/',
         'backgroundIconColor': 'linear-gradient(0.00deg, rgb(29, 147, 210),rgb(56, 176, 227) 100%)',
         'socialName': 'Telegram',
         'icon': '#telegram',
         'brandColor': '29, 147, 210',
       },
       'x': {
-        'link': 'https://t.me/',
+        'link': 'https://x.com/',
         'backgroundIconColor': '#000',
         'socialName': 'X',
         'icon': '#x',
         'brandColor': '0, 0, 0',
       },
       'linkedin': {
-        'link': 'https://t.me/',
+        'link': 'https://www.linkedin.com/',
         'backgroundIconColor': 'rgb(10, 102, 194)',
         'socialName': 'LinkedIn',
         'icon': '#linkedin',
         'brandColor': '10, 102, 194',
       },
+      'phone': {
+        'link': 'tel:',
+        'backgroundIconColor': '#0071e3',
+        'socialName': 'Phone',
+        'icon': '#phone',
+        'brandColor': '10, 102, 194',
+      },
     };
+  }
+
+  #sendAnalytics(eventName) {
+    // iec_error_setting
+    // iec_show
+    // iec_click
+    // iec_init_*
+    console.log(`${eventName}`)
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({ 'event': `${eventName}` });
+  }
+
+  #trackLinkClick() {
+    this.widgetContainer.querySelector('#iec-link').addEventListener('click', () => {
+      this.#sendAnalytics('iec_click');
+    })
   }
 }
 
