@@ -1,3 +1,4 @@
+Использование на сайте
 ```
 const ewcConfig = {
   'id': '34_314159265358980', // маска: userId_subscriptionId
@@ -39,5 +40,5 @@ const ewcConfig = {
     'isAnimationDisabled':'true',
     'custom-icon':'<img src=\'https://lexquill.com/wp-content/uploads/2023/04/danilov-andrey.jpg\' alt=\'Support\' width=\'48\' height=\'48\' />'
     }" src="/main.js"></script>
-    
+
 ```
