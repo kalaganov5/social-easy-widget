@@ -62,6 +62,11 @@ class NetEasyWidget extends HTMLElement {
 
     const link = this.#getSocialData()[social]['link'] + userName;
     const icon = this.#getSocialData()[social]['icon'];
+    const iconMarkup = icon === 'custom'
+      ? this.#scriptObject['custom-icon'] || ''
+      : `<svg width="50" height="50">
+            <use xlink:href="${icon}"></use>
+         </svg>`;
     const background = this.#getSocialData()[social]['backgroundIconColor'];
     const brandColor = this.#getSocialData()[social]['brandColor'];
 
@@ -144,6 +149,9 @@ class NetEasyWidget extends HTMLElement {
                   box-shadow: 0 8px 10px rgba(${brandColor}, 0.3), 0 0 0 30px rgba(${brandColor}, 0), 0 0 0 40px rgba(${brandColor}, 0.0)
               }
             }
+            .iec__icon img {
+              border-radius: 50%;
+            }
          </style>
          <a href="${link}" class="iec__link" target="_blank" id="iec-link">
             <div class="iec__cta" style="background-color: ${backgroundColor}">
@@ -153,10 +161,8 @@ class NetEasyWidget extends HTMLElement {
               </div>
             </div>
             <div class="iec__icon" style="background: ${background}; 
-               ${isAnimationDisabled ? 'animation: none;' : 'animation-name: pulse-custom;'}">
-               <svg width="50" height="50">
-                  <use xlink:href="${icon}"></use>
-               </svg>
+              ${isAnimationDisabled ? 'animation: none;' : 'animation-name: pulse-custom;'}">
+              ${iconMarkup}
             </div>
          </a>
          <button class="iec__close-button" type="button">
@@ -238,6 +244,13 @@ class NetEasyWidget extends HTMLElement {
         'socialName': 'Phone',
         'icon': '#phone',
         'brandColor': '10, 102, 194',
+      },
+      'custom': {
+        'link': '',
+        'backgroundIconColor': '#2B2D42',
+        'socialName': '',
+        'icon': 'custom',
+        'brandColor': '43, 45, 66',
       },
     };
   }
